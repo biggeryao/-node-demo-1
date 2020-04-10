@@ -25,7 +25,7 @@ var server = http.createServer(function (request, response) {
         response.statusCode = 200
         response.setHeader('Content-Type', 'text/html;charset=utf-8')
         response.write(`
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="/style.css">
         <h1>你好</h1>
       `)
         response.end()
@@ -36,6 +36,8 @@ var server = http.createServer(function (request, response) {
         response.end()
     } else {
         response.statusCode = 404
+        response.setHeader('Content-Type', 'text/html;charset=utf-8')
+        response.write(`你访问的页面不存在`)
         response.end()
     }
 
